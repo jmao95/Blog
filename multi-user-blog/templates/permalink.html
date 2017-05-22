@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{post.render(show_comments = True) | safe}}
+  {% if loggedin == True %}
+    <div class="error">{{error}}</div>
+    <p>
+      <form method="post">
+        {% if liked == False %}
+          <input type="submit" class="btn btn-info btn-space" name="like" value="Like" />
+        {% else %}
+          <input type="submit" class="btn btn-default btn-space" name="like" value="Unlike" />
+        {% endif %}
+        Likes: {{num_likes}}
+
+        <br>
+
+        <input type="submit" class="btn btn-primary btn-space" name="edit" value="Edit" />
+        <input type="submit" class="btn btn-default btn-space" name="delete" value="Delete" />
+
+        <br>
+
+        <textarea name="comment_content" class="comment"></textarea>
+        <input type="submit" class="btn btn-primary" name="comment" value="Add Comment" />
+      </form>
+    </p>
+  {% endif %}
+{% endblock %}

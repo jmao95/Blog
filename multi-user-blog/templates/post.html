@@ -1,0 +1,52 @@
+<div class="post">
+  <div class="panel panel-primary">
+
+    <div class="panel-heading">
+      <div class="panel-title">
+        <a href="/blog/{{p.key().id()}}">
+          {{p.subject}}
+        </a>
+        <div class="post-date">
+          {{p.created.strftime("%b %d, %Y")}}
+        </div>
+        <br>
+        <div class="post-user">
+          by {{p.user}}
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-body overflow">
+      {{p._render_text | safe}}
+    </div>
+
+    {% if show_comments == True %}
+      <div class="panel-footer">
+        {% for comment in p.user_comments.order('-created') %}
+          <a href="/blog/comment/{{comment.key().id()}}">
+            <div class="panel panel-default">
+
+              <div class="panel-heading">
+                <div class="panel-title">
+                  {{comment.user}}
+
+                  <div class="post-date comment-time">
+                    {{comment.created.strftime("%b %d, %Y")}}
+                    <br>
+                    {{comment.created.strftime("%I:%M %p")}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-body overflow">
+                {{comment.content.replace('\n','<br>') | safe}}
+              </div>
+
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</div>

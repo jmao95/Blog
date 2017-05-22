@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Edit Post</h2>
+
+    <form method="post">
+      <label>
+        <div>Subject</div>
+        <input type="text" name="subject" value="{{subject}}">
+      </label>
+
+      <br>
+
+      <label>
+        <div>Blog</div>
+        <textarea name="content">{{content}}</textarea>
+      </label>
+
+      <div class="error">{{error}}</div>
+
+      <input type="submit" class="btn btn-primary" name="save" value="Save Changes" />
+      <input type="submit" class="btn btn-default" name="back" value="Go Back" />
+    </form>
+{% endblock %}
