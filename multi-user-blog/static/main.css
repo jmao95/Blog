@@ -1,0 +1,58 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+label {
+  font-size: 20px;
+}
+
+input[name=subject] {
+    width: 500px;
+}
+
+textarea {
+  width: 500px;
+  height: 400px;
+  font-size: 17px;
+  font-family: monospace;
+}
+
+.btn-space {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.comment {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 100px;
+}
+
+.comment-time {
+  font-size: 10px;
+}
+
+.error {
+    color: red;
+}
+
+.label {
+  padding-right: 10px;
+}
+
+.main-title {
+    font-size: 30px;
+}
+
+.post-date {
+    float: right;
+}
+
+.post-user {
+    font-size: 12px;
+}
+
+.overflow {
+    word-wrap: break-word;
+}
